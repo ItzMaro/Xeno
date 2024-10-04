@@ -57,7 +57,7 @@ namespace XenoUI
 				string latestVersion = await client.GetStringAsync("https://rizve.us.to/Xeno/LatestVersion");
 				if (latestVersion != XenoVersion)
 				{
-					MessageBox.Show($"The current version {XenoVersion} is outdated.\n\nPlease download the latest version of Xeno ({latestVersion}) here: https://github.com/Riz-ve/Xeno/releases", "Outdated Xeno version", MessageBoxButton.OK, MessageBoxImage.Warning);
+					MessageBox.Show($"The current version {XenoVersion} is outdated.\n\nPlease download the latest version of Xeno ({latestVersion}) here: https://github.com/ItzMaroYT/Xeno/releases", "Outdated Xeno version", MessageBoxButton.OK, MessageBoxImage.Warning);
 					Application.Current.Shutdown();
 				}
 				SupportedVersion = await client.GetStringAsync("https://rizve.us.to/Xeno/SupportedVersion");
