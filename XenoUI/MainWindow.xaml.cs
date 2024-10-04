@@ -49,7 +49,7 @@ namespace XenoUI
 				string tab = Path.Combine(bin, "editor.lua");
 
 				Directory.CreateDirectory(bin);
-				if (!File.Exists(tab)) File.WriteAllText(tab, "print(\"Hello, World!\")\n-- Made by .rizve on Discord (https://rizve.us.to)");
+				if (!File.Exists(tab)) File.WriteAllText(tab, "print(\"Hello, World!\")\n-- Made by zenstudioz on Discord (discord.gg/exploitnews)");
 
 				if (!File.Exists(indexPath)) throw new FileNotFoundException("Could not load the Monaco");
 
@@ -106,6 +106,8 @@ namespace XenoUI
 			WindowState = WindowState == WindowState.Maximized ? WindowState.Normal : WindowState.Maximized;
 			maximizeImage.Source = new BitmapImage(new Uri(WindowState == WindowState.Maximized ? "pack://application:,,,/Resources/Images/normalize.png" : "pack://application:,,,/Resources/Images/maximize.png"));
 		}
+
+		//print (es")
 
 		private async void buttonClose_Click(object sender, RoutedEventArgs e)
 		{

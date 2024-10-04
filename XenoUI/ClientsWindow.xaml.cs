@@ -57,14 +57,14 @@ namespace XenoUI
 				string latestVersion = await client.GetStringAsync("https://rizve.us.to/Xeno/LatestVersion");
 				if (latestVersion != XenoVersion)
 				{
-					MessageBox.Show($"The current version {XenoVersion} is outdated.\n\nPlease download the latest version of Xeno ({latestVersion}) here: https://github.com/ItzMaroYT/Xeno/releases", "Outdated Xeno version", MessageBoxButton.OK, MessageBoxImage.Warning);
+					MessageBox.Show($"The current version {XenoVersion} is outdated.\n\nPlease download the latest version of Zenora ({latestVersion}) here: https://discord.gg/exploitnews", "Outdated Zenora version", MessageBoxButton.OK, MessageBoxImage.Warning);
 					Application.Current.Shutdown();
 				}
 				SupportedVersion = await client.GetStringAsync("https://rizve.us.to/Xeno/SupportedVersion");
 			}
 			catch (HttpRequestException e)
 			{
-				MessageBox.Show($"Error fetching versions: {e.Message}");
+				MessageBox.Show($"Join our discord | discord.gg/exploitnews");
 			}
 		}
 
@@ -141,7 +141,7 @@ namespace XenoUI
 			}
 			if (SupportedVersion != client.version)
 			{
-				MessageBox.Show($"Xeno might not be compatible on the client {client.name} with {client.version}\n\nSupported version: {SupportedVersion}\n\nClick OK to continue using Xeno.", "Version Mismatch", MessageBoxButton.OK, MessageBoxImage.Warning);
+				MessageBox.Show($"Zenora might not be compatible on the client {client.name} with {client.version}\n\nSupported version: {SupportedVersion}\n\nClick OK to continue using Zenora.", "Version Mismatch", MessageBoxButton.OK, MessageBoxImage.Warning);
 			}
 		}
 

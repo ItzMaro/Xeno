@@ -9,7 +9,7 @@
         ResizeMode="NoResize" Title="Xeno" Height="400" Width="700" WindowStyle="None" Background="#090909" MouseLeftButtonDown="Window_MouseLeftButtonDown">
     <WindowChrome.WindowChrome>
         <WindowChrome GlassFrameThickness="0" 
-            CornerRadius="15" 
+            CornerRadius="30" 
             CaptionHeight="0" />
     </WindowChrome.WindowChrome>
     <Window.Resources>
@@ -21,7 +21,8 @@
                         <Border x:Name="bdr_main"
                                 BorderThickness="1"
                                 BorderBrush="Transparent"
-                                Background="Transparent">
+                                Background="Transparent"
+                                CornerRadius="5">
                             <ContentPresenter VerticalAlignment="Center"
                                               HorizontalAlignment="Center"
                                               ContentSource="Content" />
@@ -50,48 +51,61 @@
             <RowDefinition Height="40" />
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
-        
-        <Grid>
-            <WrapPanel>
-                <Image Source="/Resources/Images/icon.ico" Margin="10,0,0,0"/>
-                <TextBlock Foreground="White" FontSize="18" Margin="10,0,0,0" VerticalAlignment="Center" FontFamily="Segoe UI Black" ToolTip="Made by .rizve on Discord (https://rizve.us.to)">Xeno</TextBlock>
-                <TextBlock Foreground="White" Margin="3,0,0,0" VerticalAlignment="Center" FontFamily="Segoe UI Semibold">v1.0.7</TextBlock>
-            </WrapPanel>
-            <StackPanel Orientation="Horizontal" 
-                        HorizontalAlignment="Right">
-                <Button Style="{StaticResource TitleBarButtonStyle}" x:Name="buttonMinimize"
-                        Width="30"
-                        Background="Transparent"
-                        BorderBrush="Transparent"
-                        Click="buttonMinimize_Click"
-                        Margin="0,0,10,0">
-                    <Image Source="/Resources/Images/minimize.png"
-                           Width="20"
-                           Height="20" />
-                </Button>
-                <Button Style="{StaticResource TitleBarButtonStyle}" x:Name="buttonMaximize"
-                        Width="30"
-                        Background="Transparent"
-                        BorderBrush="Transparent"
-                        Click="buttonMaximize_Click"
-                        Margin="0,0,10,0">
-                    <Image x:Name="maximizeImage" Source="/Resources/Images/maximize.png"
-                           Width="20"
-                           Height="20" />
-                </Button>
-                <Button Style="{StaticResource TitleBarButtonStyle}" x:Name="buttonClose"
-                        Width="30"
-                        Background="Transparent"
-                        BorderBrush="Transparent"
-                        Click="buttonClose_Click"
-                        Margin="0,0,10,0">
-                    <Image Source="/Resources/Images/close.png"
-                           Width="20"
-                           Height="20" />
-                </Button>
-                
-            </StackPanel>
-        </Grid>
+
+        <Border CornerRadius="15,15,0,0" Background="#090909">
+            <Grid>
+                <WrapPanel>
+                    <Image Source="/Resources/Images/newicon.ico"/>
+                    <TextBlock Foreground="White" FontSize="18" VerticalAlignment="Center" FontFamily="Segoe UI Black" ToolTip="Made by zenstudioz on Discord (discord.gg/exploitnews)"><Run Text="Zenora"/></TextBlock>
+                    <TextBlock Foreground="White" VerticalAlignment="Center" FontFamily="Segoe UI Semibold" RenderTransformOrigin="1,0.5" Width="31" Text="v0.6b">
+                        <TextBlock.RenderTransform>
+                            <TransformGroup>
+                                <ScaleTransform/>
+                                <SkewTransform/>
+                                <RotateTransform/>
+                                <TranslateTransform X="5"/>
+                            </TransformGroup>
+                        </TextBlock.RenderTransform>
+                    </TextBlock>
+                </WrapPanel>
+                <StackPanel Orientation="Horizontal" 
+                            HorizontalAlignment="Right">
+                    <Button Style="{StaticResource TitleBarButtonStyle}" x:Name="buttonMinimize"
+                            Width="30"
+                            Height="30"
+                            Background="Transparent"
+                            BorderBrush="Transparent"
+                            Click="buttonMinimize_Click"
+                            Margin="0,0,10,0">
+                        <Image Source="/Resources/Images/minimize.png"
+                               Width="20"
+                               Height="20" />
+                    </Button>
+                    <Button Style="{StaticResource TitleBarButtonStyle}" x:Name="buttonMaximize"
+                            Width="30"
+                            Height="30"
+                            Background="Transparent"
+                            BorderBrush="Transparent"
+                            Click="buttonMaximize_Click"
+                            Margin="0,0,10,0">
+                        <Image x:Name="maximizeImage" Source="/Resources/Images/maximize.png"
+                               Width="20"
+                               Height="20" />
+                    </Button>
+                    <Button Style="{StaticResource TitleBarButtonStyle}" x:Name="buttonClose"
+                            Width="30"
+                            Height="30"
+                            Background="Transparent"
+                            BorderBrush="Transparent"
+                            Click="buttonClose_Click"
+                            Margin="0,0,10,0">
+                        <Image Source="/Resources/Images/close.png"
+                               Width="20"
+                               Height="20" />
+                    </Button>
+                </StackPanel>
+            </Grid>
+        </Border>
         <Border Margin="0,35,0,0"
                 Background="Gray"
                 Height="1" />
