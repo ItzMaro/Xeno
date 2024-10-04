@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.10.35027.167
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "XenoUI", "XenoUI\XenoUI.csproj", "{42F60DE4-73A7-4BE5-8265-4849C9D8337A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release|Any CPU = Release|Any CPU
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{42F60DE4-73A7-4BE5-8265-4849C9D8337A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{42F60DE4-73A7-4BE5-8265-4849C9D8337A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{42F60DE4-73A7-4BE5-8265-4849C9D8337A}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{42F60DE4-73A7-4BE5-8265-4849C9D8337A}.Debug|x64.Build.0 = Debug|Any CPU
+		{42F60DE4-73A7-4BE5-8265-4849C9D8337A}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{42F60DE4-73A7-4BE5-8265-4849C9D8337A}.Debug|x86.Build.0 = Debug|Any CPU
+		{42F60DE4-73A7-4BE5-8265-4849C9D8337A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{42F60DE4-73A7-4BE5-8265-4849C9D8337A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{42F60DE4-73A7-4BE5-8265-4849C9D8337A}.Release|x64.ActiveCfg = Release|Any CPU
+		{42F60DE4-73A7-4BE5-8265-4849C9D8337A}.Release|x64.Build.0 = Release|Any CPU
+		{42F60DE4-73A7-4BE5-8265-4849C9D8337A}.Release|x86.ActiveCfg = Release|Any CPU
+		{42F60DE4-73A7-4BE5-8265-4849C9D8337A}.Release|x86.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {1DA80508-E112-4913-9D12-0F528F635620}
+	EndGlobalSection
+EndGlobal

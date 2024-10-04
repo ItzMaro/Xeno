@@ -1,0 +1,10 @@
+{
+    "name": "vcpkg-xeno",
+    "version-string": "master",
+    "dependencies": [
+        "openssl",
+        "zstd",
+        "xxhash"
+    ],
+    "builtin-baseline": "68d349964cb4e8da561fd849d9491e6ba11c5681"
+}

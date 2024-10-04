@@ -1,0 +1,103 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup Label="Globals" />
+
+  <PropertyGroup>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <BaseOutputPath>$(SolutionDir)\build\</BaseOutputPath>
+    <PackageOutputPath>$(SolutionDir)\build\</PackageOutputPath>
+    <DocumentationFile></DocumentationFile>
+    <ApplicationIcon>Resources\Images\icon.ico</ApplicationIcon>
+    <OutputType>WinExe</OutputType>
+    <UseWPF>True</UseWPF>
+    <StartupObject>XenoUI.App</StartupObject>
+    <PlatformTarget>x64</PlatformTarget>
+    <ProduceReferenceAssembly>True</ProduceReferenceAssembly>
+    <Title>Xeno</Title>
+    <Copyright>Rizve</Copyright>
+    <Description>Xeno - Executor UI
+https://github.com/Riz-ve/Xeno</Description>
+    <RepositoryUrl>https://github.com/Riz-ve/Xeno/tree/main/XenoUI</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <PackageLicenseFile>LICENSE</PackageLicenseFile>
+    <PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>
+    <Authors>$(AssemblyName)</Authors>
+    <PackageId>$(AssemblyName)</PackageId>
+    <Product>Xeno</Product>
+    <FileVersion>1.0.5</FileVersion>
+    <AssemblyVersion>1.0.5</AssemblyVersion>
+    <Version>1.0.5</Version>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="MainWindow.xaml.old.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="Resources\Images\clear.png" />
+    <None Remove="Resources\Images\close.png" />
+    <None Remove="Resources\Images\close2.png" />
+    <None Remove="Resources\Images\execute.png" />
+    <None Remove="Resources\Images\maximize.png" />
+    <None Remove="Resources\Images\minimize.png" />
+    <None Remove="Resources\Images\multiple.png" />
+    <None Remove="Resources\Images\normalize.png" />
+    <None Remove="Resources\Images\open.png" />
+    <None Remove="Resources\Images\save.png" />
+    <None Remove="Resources\Images\scripts.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="..\LICENSE">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+    <None Include="..\README.md">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Web.WebView2" Version="1.0.2592.51" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Resources\Images\clear.png" />
+    <Resource Include="Resources\Images\close.png" />
+    <Resource Include="Resources\Images\close2.png" />
+    <Resource Include="Resources\Images\execute.png" />
+    <Resource Include="Resources\Images\icon.ico" />
+    <Resource Include="Resources\Images\maximize.png" />
+    <Resource Include="Resources\Images\minimize.png" />
+    <Resource Include="Resources\Images\multiple.png" />
+    <Resource Include="Resources\Images\normalize.png" />
+    <Resource Include="Resources\Images\open.png" />
+    <Resource Include="Resources\Images\save.png" />
+    <Resource Include="Resources\Images\scripts.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Properties\Settings.Designer.cs">
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <None Update="Resources\Images\icon.ico">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+  </ItemGroup>
+
+</Project>
