@@ -55,7 +55,7 @@
         <Border CornerRadius="15,15,0,0" Background="#090909">
             <Grid>
                 <WrapPanel>
-                    <Image Source="/Resources/Images/newicon.ico"/>
+                    <Image Source="/Resources/Images/newicon.png"/>
                     <TextBlock Foreground="White" FontSize="18" VerticalAlignment="Center" FontFamily="Segoe UI Black" ToolTip="Made by zenstudioz on Discord (discord.gg/exploitnews)"><Run Text="Zenora"/></TextBlock>
                     <TextBlock Foreground="White" VerticalAlignment="Center" FontFamily="Segoe UI Semibold" RenderTransformOrigin="1,0.5" Width="31" Text="v0.6b">
                         <TextBlock.RenderTransform>
