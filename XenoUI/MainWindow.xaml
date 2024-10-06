@@ -13,32 +13,52 @@
             CaptionHeight="0" />
     </WindowChrome.WindowChrome>
     <Window.Resources>
-        <Style x:Key="TitleBarButtonStyle" 
-               TargetType="{x:Type Button}">
+        <Style x:Key="WindowButtonStyle" TargetType="{x:Type Button}">
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="Foreground" Value="#7F8C8D"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="Width" Value="30"/>
+            <Setter Property="Height" Value="25"/>
+            <Setter Property="FontSize" Value="10"/>
             <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate TargetType="{x:Type Button}">
-                        <Border x:Name="bdr_main"
-                                BorderThickness="1"
-                                BorderBrush="Transparent"
-                                Background="Transparent"
-                                CornerRadius="5">
-                            <ContentPresenter VerticalAlignment="Center"
-                                              HorizontalAlignment="Center"
-                                              ContentSource="Content" />
+                        <Border Background="{TemplateBinding Background}" CornerRadius="10">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
                         </Border>
                         <ControlTemplate.Triggers>
-                            <Trigger Property="IsMouseOver"
-                                     Value="True">
-                                <Setter TargetName="bdr_main"
-                                        Property="Background"
-                                        Value="#474747"/>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="#22FFFFFF"/>
+                                <Setter Property="Foreground" Value="White"/>
                             </Trigger>
-                            <Trigger Property="IsPressed"
-                                     Value="True">
-                                <Setter TargetName="bdr_main"
-                                        Property="Background"
-                                        Value="#474747"/>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style x:Key="FluentButtonStyle" TargetType="{x:Type Button}">
+            <Setter Property="Background" Value="#2C2F33"/>
+            <Setter Property="Foreground" Value="#7F8C8D"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="Width" Value="32"/>
+            <Setter Property="Height" Value="32"/>
+            <Setter Property="Margin" Value="4,0"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border Background="{TemplateBinding Background}"
+                                CornerRadius="10"
+                                BorderThickness="{TemplateBinding BorderThickness}"
+                                BorderBrush="{TemplateBinding BorderBrush}">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="#353A40"/>
+                                <Setter Property="Foreground" Value="White"/>
+                            </Trigger>
+                            <Trigger Property="IsPressed" Value="True">
+                                <Setter Property="Background" Value="#404549"/>
                             </Trigger>
                         </ControlTemplate.Triggers>
                     </ControlTemplate>
@@ -46,163 +66,48 @@
             </Setter>
         </Style>
     </Window.Resources>
-    <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="40" />
-            <RowDefinition Height="*" />
-        </Grid.RowDefinitions>
 
-        <Border CornerRadius="15,15,0,0" Background="#090909">
-            <Grid>
-                <WrapPanel>
-                    <Image Source="/Resources/Images/newicon.png"/>
-                    <TextBlock Foreground="White" FontSize="18" VerticalAlignment="Center" FontFamily="Segoe UI Black" ToolTip="Made by zenstudioz on Discord (discord.gg/exploitnews)"><Run Text="Zenora"/></TextBlock>
-                    <TextBlock Foreground="White" VerticalAlignment="Center" FontFamily="Segoe UI Semibold" RenderTransformOrigin="1,0.5" Width="31" Text="v0.6b">
-                        <TextBlock.RenderTransform>
-                            <TransformGroup>
-                                <ScaleTransform/>
-                                <SkewTransform/>
-                                <RotateTransform/>
-                                <TranslateTransform X="5"/>
-                            </TransformGroup>
-                        </TextBlock.RenderTransform>
-                    </TextBlock>
-                </WrapPanel>
-                <StackPanel Orientation="Horizontal" 
-                            HorizontalAlignment="Right">
-                    <Button Style="{StaticResource TitleBarButtonStyle}" x:Name="buttonMinimize"
-                            Width="30"
-                            Height="30"
-                            Background="Transparent"
-                            BorderBrush="Transparent"
-                            Click="buttonMinimize_Click"
-                            Margin="0,0,10,0">
-                        <Image Source="/Resources/Images/minimize.png"
-                               Width="20"
-                               Height="20" />
-                    </Button>
-                    <Button Style="{StaticResource TitleBarButtonStyle}" x:Name="buttonMaximize"
-                            Width="30"
-                            Height="30"
-                            Background="Transparent"
-                            BorderBrush="Transparent"
-                            Click="buttonMaximize_Click"
-                            Margin="0,0,10,0">
-                        <Image x:Name="maximizeImage" Source="/Resources/Images/maximize.png"
-                               Width="20"
-                               Height="20" />
-                    </Button>
-                    <Button Style="{StaticResource TitleBarButtonStyle}" x:Name="buttonClose"
-                            Width="30"
-                            Height="30"
-                            Background="Transparent"
-                            BorderBrush="Transparent"
-                            Click="buttonClose_Click"
-                            Margin="0,0,10,0">
-                        <Image Source="/Resources/Images/close.png"
-                               Width="20"
-                               Height="20" />
-                    </Button>
+    <Border CornerRadius="8" Background="#1E2124" BorderBrush="#2C2F33" BorderThickness="1">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="30"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="40"/>
+            </Grid.RowDefinitions>
+
+            <Border Grid.Row="0" Background="#2C2F33" CornerRadius="8,8,0,0" MouseDown="Window_MouseLeftButtonDown">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Image Source="/Resources/Images/newicon.ico" Width="44" Height="44" Margin="8,0,0,0" VerticalAlignment="Center"/>
+                    <TextBlock Text="Xeno" Foreground="White" FontSize="13" 
+                       FontWeight="Medium" Margin="54,0,10,0" VerticalAlignment="Center" Grid.ColumnSpan="2"/>
+                    <StackPanel Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,0,5,0">
+                        <Button x:Name="MinimizeButton" Content="─" Style="{StaticResource WindowButtonStyle}" Click="MinimizeButton_Click"/>
+                        <Button x:Name="CloseButton" Content="✕" Style="{StaticResource WindowButtonStyle}" Click="CloseButton_Click"/>
+                    </StackPanel>
+                </Grid>
+            </Border>
+
+            <Border Grid.Row="1" Margin="8" CornerRadius="6" Background="#2C2F33">
+                <wv2:WebView2 x:Name="script_editor" />
+            </Border>
+
+            <Grid Grid.Row="2" Margin="8,0,8,8">
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
+                    <Button x:Name="ButtonExecute" Content="▶" Style="{StaticResource FluentButtonStyle}" Click="ButtonExecute_Click"/>
+                    <Button x:Name="ButtonClear" Content="✕" Style="{StaticResource FluentButtonStyle}" Click="ButtonClear_Click"/>
+                    <Button x:Name="ButtonOpenFile" Content="📂" Style="{StaticResource FluentButtonStyle}" Click="ButtonOpenFile_Click"/>
+                    <Button x:Name="ButtonSaveFile" Content="💾" Style="{StaticResource FluentButtonStyle}" Click="ButtonSaveFile_Click"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                    <Button x:Name="ButtonAttach" Content="🔗" Style="{StaticResource FluentButtonStyle}"/>
+                    <Button x:Name="ButtonClients" Content="👥" Style="{StaticResource FluentButtonStyle}" Click="ButtonClients_Click"/>
+                    <Button x:Name="ButtonScripts" Content="📝" Style="{StaticResource FluentButtonStyle}" Click="ButtonScripts_Click"/>
                 </StackPanel>
             </Grid>
-        </Border>
-        <Border Margin="0,35,0,0"
-                Background="Gray"
-                Height="1" />
-        <wv2:WebView2 
-            x:Name="script_editor"
-            Grid.Row="1"
-            Margin="10,5,10,40"/>
-        <Button Style="{StaticResource TitleBarButtonStyle}" HorizontalAlignment="Left"
-                x:Name="buttonExecute"
-                Height="30"
-                Margin="660,325,0,0"
-                Grid.Row="1"
-                VerticalAlignment="Top"
-                Width="30"
-                Background="Transparent"
-                BorderBrush="Transparent"
-                Cursor="Hand"
-                Click="buttonExecute_Click">
-            <Image Source="/Resources/Images/execute.png"
-                   Width="25"
-                   Height="25" ToolTip="Execute" />
-        </Button>
-        <Button Style="{StaticResource TitleBarButtonStyle}" HorizontalAlignment="Left"
-                x:Name="buttonShowMultinstance"
-                Height="30"
-                Margin="620,325,0,0"
-                Grid.Row="1"
-                VerticalAlignment="Top"
-                Width="30"
-                Background="Transparent"
-                BorderBrush="Transparent"
-                Cursor="Hand"
-                Click="buttonShowMultinstance_Click">
-            <Image Source="/Resources/Images/multiple.png"
-                   Width="25"
-                   Height="25" ToolTip="Clients Management" />
-        </Button>
-        <Button Style="{StaticResource TitleBarButtonStyle}" HorizontalAlignment="Left"
-                x:Name="buttonShowScripts"
-                Height="30"
-                Margin="580,325,0,0"
-                Grid.Row="1"
-                VerticalAlignment="Top"
-                Width="30"
-                Background="Transparent"
-                BorderBrush="Transparent"
-                Cursor="Hand"
-                Click="buttonShowScripts_Click"
-                Visibility="Visible">
-            <Image Source="/Resources/Images/scripts.png"
-                   Width="30"
-                   Height="30" ToolTip="View Scripts" />
-        </Button>
-        <Button Style="{StaticResource TitleBarButtonStyle}" HorizontalAlignment="Left"
-                x:Name="buttonClear"
-                Height="30"
-                Margin="80,325,0,0"
-                Grid.Row="1"
-                VerticalAlignment="Top"
-                Width="30"
-                Background="Transparent"
-                BorderBrush="Transparent"
-                Cursor="Hand"
-                Click="buttonClear_Click">
-            <Image Source="/Resources/Images/clear.png"
-                   Width="30"
-                   Height="30" ToolTip="Clear" />
-        </Button>
-        <Button Style="{StaticResource TitleBarButtonStyle}" HorizontalAlignment="Left"
-                x:Name="buttonSaveFile"
-                Height="30"
-                Margin="45,325,0,0"
-                Grid.Row="1"
-                VerticalAlignment="Top"
-                Width="30"
-                Background="Transparent"
-                BorderBrush="Transparent"
-                Cursor="Hand"
-                Click="buttonSaveFile_Click">
-            <Image Source="/Resources/Images/save.png"
-                   Width="25"
-                   Height="25" ToolTip="Save" />
-        </Button>
-        <Button Style="{StaticResource TitleBarButtonStyle}" HorizontalAlignment="Left"
-                x:Name="buttonOpenFile"
-                Height="30"
-                Margin="10,325,0,0"
-                Grid.Row="1"
-                VerticalAlignment="Top"
-                Width="30"
-                Background="Transparent"
-                BorderBrush="Transparent"
-                Cursor="Hand"
-                Click="buttonOpenFile_Click">
-            <Image Source="/Resources/Images/open.png"
-                   Width="25"
-                   Height="25" ToolTip="Open"/>
-        </Button>
-    </Grid>
+        </Grid>
+    </Border>
 </Window>
