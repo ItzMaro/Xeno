@@ -20,16 +20,16 @@ namespace XenoUI
 			public int id;
 		}
 
-		[DllImport("Xeno.dll", CallingConvention = CallingConvention.Cdecl)]
+		[DllImport("XenoDLL.dll", CallingConvention = CallingConvention.Cdecl)]
 		private static extern void Initialize();
 
-		[DllImport("Xeno.dll", CallingConvention = CallingConvention.Cdecl)]
+		[DllImport("XenoDLL.dll", CallingConvention = CallingConvention.Cdecl)]
 		private static extern IntPtr GetClients();
 
-		[DllImport("Xeno.dll", CallingConvention = CallingConvention.Cdecl, CharSet = CharSet.Ansi)]
+		[DllImport("XenoDLL.dll", CallingConvention = CallingConvention.Cdecl, CharSet = CharSet.Ansi)]
 		private static extern void Execute(byte[] scriptSource, string[] clientUsers, int numUsers);
 
-		[DllImport("Xeno.dll", CallingConvention = CallingConvention.Cdecl, CharSet = CharSet.Ansi)]
+		[DllImport("XenoDLL.dll", CallingConvention = CallingConvention.Cdecl, CharSet = CharSet.Ansi)]
 		private static extern IntPtr Compilable(byte[] scriptSource);
 
 		private readonly DispatcherTimer _timer;

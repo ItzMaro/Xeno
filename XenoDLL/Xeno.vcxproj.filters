@@ -117,6 +117,12 @@
     <ClInclude Include="include\server\httplib.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="include\xxhash.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\zstd.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Xeno.cpp">
@@ -194,5 +200,6 @@
     <None Include="run.bat">
       <Filter>Source Files</Filter>
     </None>
+    <None Include="packages.config" />
   </ItemGroup>
 </Project>

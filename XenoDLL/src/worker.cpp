@@ -492,7 +492,7 @@ std::uintptr_t GetRV(HANDLE handle)
         for (const std::filesystem::path& logPath : logFiles) {
             try {
                 std::filesystem::remove(logPath);
-            } catch (const std::filesystem::filesystem_error& e) {
+            } catch (const std::filesystem::filesystem_error&) {
                 lockedFiles.push_back(logPath);
             }
         }

@@ -17,7 +17,7 @@ scriptsContainer.Name = "Scripts"
 local Xeno = {
 	about = {
 		_name = 'Xeno',
-		_version = '%XENO_VERSION%',
+		_version = '1.0.7',
 		_publisher = ".rizve | https://rizve.us.to"
 	}
 }
@@ -56,15 +56,15 @@ end
 local libs = {
 	{
 		['name'] = "HashLib",
-		['url'] = "https://rizve.us.to/Xeno/hash"
+		['url'] = "https://itzmaro.github.io/XenoAPI/drawing/hash.txt"
 	},
 	{
 		['name'] = "lz4",
-		['url'] = "https://rizve.us.to/Xeno/lz4"
+		['url'] = "https://itzmaro.github.io/XenoAPI/drawing/lz4.txt"
 	},
 	{
 		['name'] = "DrawingLib",
-		['url'] = "https://rizve.us.to/Xeno/drawing"
+		['url'] = "https://itzmaro.github.io/XenoAPI/drawing/drawing.txt"
 	}
 }
 
@@ -332,7 +332,7 @@ function Bridge:InternalRequest(body, timeout)
 	end)
 
 	if success and result then
-		error("XENO SERVER ERROR: " .. tostring(result), 2)
+		error("Xeno SERVER ERROR: " .. tostring(result), 2)
 	end
 
 	error("An unknown error occured by the server.", 2)
@@ -525,7 +525,7 @@ function Bridge:loadstring(source, chunkName)
 			end
 
 			if (tick() - clock > 5) then
-				warn("[XENO]: loadstring failed and timed out")
+				warn("[Xeno]: loadstring failed and timed out")
 				for _, module in pairs(cachedModules) do
 					module:Destroy()
 				end
@@ -1478,7 +1478,7 @@ local _saveinstance = nil
 function Xeno.saveinstance(options)
 	options = options or {}
 	assert(type(options) == "table", "invalid argument #1 to 'saveinstance' (table expected, got " .. type(options) .. ") ", 2)
-	print("saveinstance Powered by UniversalSynSaveInstance | AGPL-3.0 license")
+	print("saveinstance Powered by DLLDecompile")
 	_saveinstance = _saveinstance or Xeno.loadstring(Xeno.HttpGet("https://raw.githubusercontent.com/luau/SynSaveInstance/main/saveinstance.luau", true), "saveinstance")()
 	return _saveinstance(options)
 end
@@ -1494,6 +1494,7 @@ end
 function Xeno.identifyexecutor()
 	return Xeno.getexecutorname(), Xeno.getexecutorversion()
 end
+
 Xeno.whatexecutor = Xeno.identifyexecutor
 
 function Xeno.get_hwid()
@@ -1976,13 +1977,13 @@ function Xeno.checkcaller()
 end
 
 function Xeno.getthreadcontext()
-	return 3
+	return "7"
 end
 Xeno.getthreadidentity = Xeno.getthreadcontext
 Xeno.getidentity = Xeno.getthreadcontext
 
 function Xeno.setthreadidentity()
-	return 3, "Not Implemented"
+	return "7", "Not Implemented"
 end
 Xeno.setidentity = Xeno.setthreadidentity
 Xeno.setthreadcontext = Xeno.setthreadidentity
