@@ -1,3 +1,8 @@
+# Xeno Owned by: https://discord.gg/exploitnews
+# Zenora Owned by: https://discord.gg/exploitnews
+# API Source Code: https://github.com/ItzMaro/Xeno/tree/main/XenoDLL
+# UI Source Code: https://github.com/ItzMaro/Xeno/tree/main/XenoUI
+
 > [!WARNING]
 > You are most likely going to be banned since this is detected by Byfron. Use an alt account while running Xeno. Use the repository to understand what's happening and how it works.
 > I am not liable for any bans
