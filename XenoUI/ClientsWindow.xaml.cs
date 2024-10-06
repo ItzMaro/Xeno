@@ -10,7 +10,7 @@ namespace XenoUI
 {
     public partial class ClientsWindow : Window
     {
-        public string XenoVersion = "1.0.7";
+        public string XenoVersion = "1.0.5";
 
         [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Ansi)]
         public struct ClientInfo
@@ -40,7 +40,7 @@ namespace XenoUI
         public ClientsWindow()
         {
             InitializeComponent();
-            LoadSupportedVersion();
+            //LoadSupportedVersion();
             Initialize();
             MouseLeftButtonDown += (_, _) => DragMove();
 
@@ -49,6 +49,7 @@ namespace XenoUI
             _timer.Start();
         }
 
+        /*
         private async void LoadSupportedVersion()
         {
             try
@@ -67,6 +68,7 @@ namespace XenoUI
                 MessageBox.Show($"Join our discord | discord.gg/exploitnews");
             }
         }
+        */
 
         private void UpdateClientList(object? sender, EventArgs e)
         {
