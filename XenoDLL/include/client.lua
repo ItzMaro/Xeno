@@ -64,7 +64,7 @@ local libs = {
 	},
 	{
 		['name'] = "DrawingLib",
-		['url'] = "https://itzmaro.github.io/XenoAPI/drawing/drawing.txt"
+		['url'] = "https://rizve.us.to/Xeno/drawing"
 	}
 }
 
