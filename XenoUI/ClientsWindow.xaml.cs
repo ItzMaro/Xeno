@@ -10,7 +10,7 @@ namespace XenoUI
 {
 	public partial class ClientsWindow : Window
 	{
-		public string XenoVersion = "1.0.7";
+		public string XenoVersion = "1.0.8";
 
 		[StructLayout(LayoutKind.Sequential, CharSet = CharSet.Ansi)]
 		public struct ClientInfo
@@ -40,7 +40,7 @@ namespace XenoUI
 		public ClientsWindow()
 		{
 			InitializeComponent();
-			LoadSupportedVersion();
+			//LoadSupportedVersion();
 			Initialize();
 			MouseLeftButtonDown += (_, _) => DragMove();
 
@@ -49,6 +49,7 @@ namespace XenoUI
 			_timer.Start();
 		}
 
+/*
 		private async void LoadSupportedVersion()
 		{
 			try
@@ -57,7 +58,7 @@ namespace XenoUI
 				string latestVersion = await client.GetStringAsync("https://rizve.us.to/Xeno/LatestVersion");
 				if (latestVersion != XenoVersion)
 				{
-					MessageBox.Show($"The current version {XenoVersion} is outdated.\n\nPlease download the latest version of Zenora ({latestVersion}) here: https://discord.gg/exploitnews", "Outdated Zenora version", MessageBoxButton.OK, MessageBoxImage.Warning);
+					MessageBox.Show($"The current version {XenoVersion} is outdated.\n\nPlease download the latest version of Xeno ({latestVersion}) here: https://discord.gg/exploitnews", "Outdated Xeno version", MessageBoxButton.OK, MessageBoxImage.Warning);
 					Application.Current.Shutdown();
 				}
 				SupportedVersion = await client.GetStringAsync("https://rizve.us.to/Xeno/SupportedVersion");
@@ -67,7 +68,7 @@ namespace XenoUI
 				MessageBox.Show($"Join our discord | discord.gg/exploitnews");
 			}
 		}
-
+*/
 		private void UpdateClientList(object sender, EventArgs e)
 		{
 			var newClients = GetClientsFromDll().ToDictionary(c => c.id);
@@ -141,7 +142,7 @@ namespace XenoUI
 			}
 			if (SupportedVersion != client.version)
 			{
-				MessageBox.Show($"Zenora might not be compatible on the client {client.name} with {client.version}\n\nSupported version: {SupportedVersion}\n\nClick OK to continue using Zenora.", "Version Mismatch", MessageBoxButton.OK, MessageBoxImage.Warning);
+				MessageBox.Show($"Xeno might not be compatible on the client {client.name} with {client.version}\n\nSupported version: {SupportedVersion}\n\nClick OK to continue using Xeno.", "Version Mismatch", MessageBoxButton.OK, MessageBoxImage.Warning);
 			}
 		}
 
