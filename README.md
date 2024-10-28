@@ -1,5 +1,5 @@
-# Xeno Owned by: https://discord.gg/exploitnews
-# Zenora Owned by: https://discord.gg/exploitnews
+# Xeno Owned by: https://discord.gg/eknR2BNPdT
+# Zenora Owned by: https://discord.gg/eknR2BNPdT
 # API Source Code: https://github.com/ItzMaro/Xeno/tree/main/XenoDLL
 # UI Source Code: https://github.com/ItzMaro/Xeno/tree/main/XenoUI
 
