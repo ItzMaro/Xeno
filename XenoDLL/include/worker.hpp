@@ -17,31 +17,27 @@
 #include "utils/ntdll.h"
 
 namespace offsets {
-    // Instance
     constexpr std::uint64_t This = 0x8;
-    constexpr std::uint64_t Name = 0x50;  // Updated
-    constexpr std::uint64_t Children = 0x58;  // Updated
-    constexpr std::uint64_t Parent = 0x28;  // Updated
-
+    constexpr std::uint64_t Name = 0x68;
+    constexpr std::uint64_t Children = 0x70;
+    constexpr std::uint64_t Parent = 0x40;
     constexpr std::uint64_t ClassDescriptor = 0x18;
     constexpr std::uint64_t ClassName = 0x8;
 
-    // Scripts
-    constexpr std::uint64_t ModuleScriptEmbedded = 0x160;
-    constexpr std::uint64_t IsCoreScript = 0x1a8;
+    constexpr std::uint64_t ModuleScriptEmbedded = 0x168;
+    constexpr std::uint64_t IsCoreScript = 0x1b0;
     constexpr std::uint64_t ModuleFlags = IsCoreScript - 0x4;
-    constexpr std::uint64_t LocalScriptEmbedded = 0x1c0;
+    constexpr std::uint64_t LocalScriptEmbedded = 0x1c8;
 
     constexpr std::uint64_t Bytecode = 0x10;
     constexpr std::uint64_t BytecodeSize = 0x20;
 
-    // Other
-    constexpr std::uint64_t LocalPlayer = 0x110;  // Updated
-    constexpr std::uint64_t ObjectValue = 0xc0;
+    constexpr std::uint64_t LocalPlayer = 0x118;
+    constexpr std::uint64_t ObjectValue = 0xc8;
 }
 
 
-const std::string_view Xeno_Version = "1.0.7";
+const std::string_view Xeno_Version = "1.0.85";
 
 template<typename T>
 T read_memory(std::uintptr_t address, HANDLE handle);
@@ -258,7 +254,7 @@ public:
         std::uintptr_t fakeDataModel = read_memory<std::uintptr_t>(RenderView + 0x118, handle);
         if (fakeDataModel == 0)
             std::cerr << "Could not fetch datamodel, expect a crash\n";
-        return fakeDataModel + 0x190;
+        return fakeDataModel + 0x1a0;
     }
 
     void execute(const std::string& source) const;
