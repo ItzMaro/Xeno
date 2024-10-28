@@ -10,7 +10,7 @@ namespace XenoUI
 {
 	public partial class ClientsWindow : Window
 	{
-		public string XenoVersion = "1.0.8";
+		public string XenoVersion = "1.0.85";
 
 		[StructLayout(LayoutKind.Sequential, CharSet = CharSet.Ansi)]
 		public struct ClientInfo
