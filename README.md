@@ -1,7 +1,10 @@
-# Xeno Source Owned by: https://discord.gg/eknR2BNPdT
-# Zenora Owned by: https://discord.gg/eknR2BNPdT
-# API Source Code: https://github.com/ItzMaro/Xeno/tree/main/XenoDLL
-# UI Source Code: https://github.com/ItzMaro/Xeno/tree/main/XenoUI
+## sure it's updated to latest version of roblox + new updates
+## also xeno source code is updated and published by skidder.lol (not advertising)
+
+# Xeno Source Owned by: https://discord.gg/eknR2BNPdT (not advertising)
+# Zenora Owned by: https://discord.gg/eknR2BNPdT (not advertising)
+# API Source Code: https://github.com/ItzMaro/Xeno/tree/main/XenoDLL (not advertising)
+# UI Source Code: https://github.com/ItzMaro/Xeno/tree/main/XenoUI (not advertising)
 
 > [!WARNING]
 > You are most likely going to be banned since this is detected by Byfron. Use an alt account while running Xeno. Use the repository to understand what's happening and how it works.
