@@ -1,5 +1,10 @@
-## sure it's updated to latest version of roblox + new updates
-## also xeno source code is updated and published by skidder.lol (not advertising)
+> [!WARNING]
+> **This Repository is Deprecated**
+>
+> Please use the new repository at [LuauAPI](https://github.com/LuauDev/LuauAPI).
+
+### sure it's updated to latest version of roblox + new updates
+### also xeno source code is updated and published by skidder.lol (not advertising)
 
 # Xeno Source Owned by: https://discord.gg/eknR2BNPdT (not advertising)
 # Zenora Owned by: https://discord.gg/eknR2BNPdT (not advertising)
